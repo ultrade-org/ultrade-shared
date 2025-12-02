@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "./dist",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@common/*": [
+        "./src/common/*"
+      ],
+      "@constants": [
+        "./src/constants/index.ts"
+      ],
+      "@enums": [
+        "./src/enums/index.ts"
+      ],
+      "@helpers/*": [
+        "./src/helpers/*"
+      ],
+      "@interfaces": [
+        "./src/interfaces/index.ts"
+      ],
+      "@types": [
+        "./src/types/index.ts"
+      ]
+    },
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "include": [
+    "src/**/*",
+    "build.helper.ts",
+    "esbuild.config.ts"
+  ]
+}

@@ -1,0 +1,85 @@
+export const RESPONSES = {
+  SUCCESS: 200,
+  CREATED: 201,
+  ACCEPTED: 202,
+  NOCONTENT: 204,
+  BADREQUEST: 400,
+  FORBIDDEN: 403,
+  NOTFOUND: 404,
+  TIMEOUT: 408,
+  TOOMANYREQ: 429,
+  INTERNALSERVER: 500,
+  BADGATEWAYS: 502,
+  SERVICEUNAVILABLE: 503,
+  GATEWAYTIMEOUT: 504,
+};
+
+export const RES_MSG = {
+  INSERT: 'Data has been saved successfully.',
+  ERROR: 'Some error has been occured. Please try again.',
+  SUCCESS: 'Your request is executed successfully!',
+  REQUIRED: 'coin_type or price param is required',
+  CAPTCHATEXTNOTFOUND: 'Captcha text not found.',
+  CAPTCHA_VERIFICATION_FAILED: 'Captcha is not verified.',
+  NOTEMPTY: 'coin_type or price should not be empty',
+  PAIR_LIST: 'Pair list',
+  PAIR_STATUS: 'Pair status has been changed',
+  ACTIVE_USERS: 'Active Users',
+  SETTINGS_NOT_FOUND: 'No settings found in DB.',
+  TRADE_IS_HALT: 'Trading is disabled.',
+  KYC_REQUIRED: 'KYC is required for this action.',
+  EMAIL_NOT_VERIFIED: 'Your email is not verified.Please verify first.',
+  NOT_BETA_USER: 'Trade only works for beta user.',
+  WRONG_PAIR_KEY: 'Pair key not found.',
+  PAIRDISABLED: 'Temporarily order placement has been disabled for this pair. Please try again later.',
+  BALANCE_NOT_SUFFICIENT: 'You have insufficient balance.',
+  MIN_TRADE_NOT_MATCHED: 'Minimum trade limit does not matched.',
+  ORDER_PLACED_SUCCESSFULLY: 'Order has been placed successfully.',
+  ORDER_NOT_FOUND: 'Sorry this order id does not found.',
+  ORDER_ALREADY_MATCHED: 'Order already matched.',
+  ORDER_ALREADY_CANCELED: 'Order already cancelled.',
+  ORDER_CANCELED_SUCCESSFULLY: 'order successfully cancelled',
+  ORDER_LIST: 'Order list fetched successfully.',
+  ORDER_EXIT: 'Successfully exited from the position.',
+  PAIRERR: 'please provide pair param',
+  ORDERSIDE: 'side param is required',
+  ORDERTYPE: 'type param is required',
+  ORDERIDREQ: 'order_id param is required',
+  ORDERDETAIL: 'order detail',
+  COMMODITYORICE: 'commodity price',
+  COMMODITYSPOT: 'commodity spot updated',
+  TOKEN_INSERTED: 'ERC token has been added',
+  PARAMREQ: 'Parameter missing',
+  EXIST: 'Token Already Exist',
+  BREACHEDTOKENS: 'List of breached tokens',
+  API_EXPOSE: {
+    TOKEN_NOT_FOUND: 'Token not found, Please get token and set to header.',
+    ERROR: "Something went wrong, Please try again later"
+  },
+  LIMITED_UNITS: 'ONLY {{units}} units are available. You can place your order with this amount',
+  UNITS_UNAVAIL: 'Amount unavailable',
+  ORDER:{
+    ERROR: 'An error has been occured',
+    UNITS_UNAVAIL: 'Amount unavailable',
+    LIMITED_UNITS: 'ONLY {{units}} units are available. You can place your order with this amount',
+    PLACED: 'Order has been placed',
+    NOPARAMS: 'empty body params',
+    ORDER_NOT_FOUND: 'Sorry this order id not found.',
+    ORDER_ALREADY_MATCHED:'Order already matched.',
+    ORDER_ALREADY_CANCELED:'Order already cancelled.',
+    ORDER_CANCELED_SUCCESSFULLY:'Order cancelled successfully',
+  },
+  DOMAIN_NOT_FOUND: 'domain not found',
+};
+export const BIGNUMBER = {
+  SMALLESTUNIT: process.env.SMALLEST_UNIT,
+};
+
+export const CALCULATIONS = {
+  SMALLEST_UNITS: process.env.SMALLEST_UNIT,
+};
+
+export const SERVER = {
+  AVAILABLE_ASSETS_PER_USER: 1,
+  AVAILABLE_ASSETS_PER_IP: 3,
+};

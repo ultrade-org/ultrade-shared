@@ -1,0 +1,37 @@
+export enum ActionSource {
+  COMPANY = 'COMPANY',
+  TWITTER = 'TWITTER',
+  DISCORD = 'DISCORD',
+  TELEGRAM = 'TELEGRAM',
+}
+
+export type TwitterAction = ActionEnum.TWITTER_FOLLOW | ActionEnum.TWITTER_LIKE | ActionEnum.TWITTER_REPLY | ActionEnum.TWITTER_RETWEET;
+export type CompanyAction =
+  | ActionEnum.COMPANY_FIRST_LOGIN
+  | ActionEnum.COMPANY_CONFIRM_EMAIL
+  | ActionEnum.COMPANY_DEPOSIT
+  | ActionEnum.COMPANY_TRADE;
+export type DiscordAction = ActionEnum.DISCORD_JOIN_SERVER;
+export type TelegramAction = ActionEnum.TELEGRAM_JOIN_GROUP;
+
+export enum ActionEnum {
+  TWITTER_FOLLOW = 1,
+  TWITTER_REPLY = 2,
+  TWITTER_RETWEET = 3,
+  TWITTER_LIKE = 4,
+  COMPANY_FIRST_LOGIN = 5,
+  COMPANY_CONFIRM_EMAIL = 6,
+  COMPANY_DEPOSIT = 7,
+  COMPANY_TRADE = 8,
+  TELEGRAM_JOIN_GROUP = 9,
+  DISCORD_JOIN_SERVER = 10,
+  AFFILIATE_POINTS_REWARD = 11,
+}
+
+export const NON_REPEATABLE_ACTIONS = [
+  ActionEnum.TWITTER_FOLLOW,
+  ActionEnum.TELEGRAM_JOIN_GROUP,
+  ActionEnum.DISCORD_JOIN_SERVER,
+  ActionEnum.COMPANY_CONFIRM_EMAIL,
+  ActionEnum.COMPANY_FIRST_LOGIN,
+];

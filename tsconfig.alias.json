@@ -1,0 +1,53 @@
+{
+  "extends": "./tsconfig.json",
+  "references": [
+    {
+      "path": "./tsconfig.json"
+    }
+  ],
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": true,
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@common/*": [
+        "./src/common/*"
+      ],
+      "@constants": [
+        "./src/constants/index.ts"
+      ],
+      "@enums": [
+        "./src/enums/index.ts"
+      ],
+      "@helpers/*": [
+        "./src/helpers/*"
+      ],
+      "@interfaces": [
+        "./src/interfaces/index.ts"
+      ],
+      "@types": [
+        "./src/types/index.ts"
+      ]
+    },
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "esbuild.config.ts",
+    "build.helper.ts"
+  ]
+}

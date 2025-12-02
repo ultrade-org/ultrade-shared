@@ -1,0 +1,7 @@
+export enum Notification {
+  SELF_TRADE = 1,
+  FULL_FILLED,
+  FULL_CANCELLED,
+  PARTIALLY_CANCELLED,
+  CREATED,
+}

@@ -1,0 +1,11 @@
+export const FACTOR_PRICE_DECIMAL = 18;
+export const FEE_SCALE = 100000;
+export const FRONTEND_FEE_SCALE = FEE_SCALE / 100;
+export const DEFAULT_FEE_SHARE = 90000;
+export const DEFAULT_ORDER_EXPIRATION_DAYS = 30;
+export const MIN_ORDER_EXPIRATION_MINS = 60;
+export const ORDER_DATA_BYTES_LENGTH = 328;
+export const ORDER_MSG_VERSION = 1;
+export const MAX_TOKEN_DECIMAL = 18;
+export const SHARE_DATA_LENGTH = 36;
+export const WITHDRAW_DATA_BYTES_LENGTH = 248;
