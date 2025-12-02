@@ -38,6 +38,7 @@
     "dev:browser": "cross-env MODE=browser-dev ts-node esbuild.config.ts",
     "version:update": "npm version patch --no-git-tag-version"
   },
+  
   "files": [
     "dist"
   ],
