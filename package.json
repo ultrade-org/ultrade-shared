@@ -39,8 +39,7 @@
     "version:update": "npm version patch --no-git-tag-version"
   },
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
