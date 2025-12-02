@@ -1,6 +1,6 @@
 {
   "name": "@ultrade/shared",
-  "version": "1.0.9",
+  "version": "1.0.16",
   "description": "This package contains shared code for the projects.",
   "exports": {
     "./browser/common/*": {
@@ -38,7 +38,6 @@
     "dev:browser": "cross-env MODE=browser-dev ts-node esbuild.config.ts",
     "version:update": "npm version patch --no-git-tag-version"
   },
-  
   "files": [
     "dist"
   ],
