@@ -1,6 +1,6 @@
 {
   "name": "@ultrade/shared",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "This package contains shared code for the projects.",
   "exports": {
     "./browser/common/*": {
@@ -27,12 +27,24 @@
   },
   "typesVersions": {
     "*": {
-      "browser/common/*": ["dist/common/*"],
-      "node/common/*": ["dist/common/*"],
-      "browser/helpers/*": ["dist/helpers/*"],
-      "node/helpers/*": ["dist/helpers/*"],
-      "browser/*": ["dist/*/index.d.ts"],
-      "node/*": ["dist/*/index.d.ts"]
+      "browser/common/*": [
+        "dist/common/*"
+      ],
+      "node/common/*": [
+        "dist/common/*"
+      ],
+      "browser/helpers/*": [
+        "dist/helpers/*"
+      ],
+      "node/helpers/*": [
+        "dist/helpers/*"
+      ],
+      "browser/*": [
+        "dist/*/index.d.ts"
+      ],
+      "node/*": [
+        "dist/*/index.d.ts"
+      ]
     }
   },
   "scripts": {
