@@ -4,31 +4,35 @@
   "description": "This package contains shared code for the projects.",
   "exports": {
     "./browser/common/*": {
-      "import": "./dist/browser/common/*.js",
-      "types": "./dist/common/*.d.ts"
+      "import": "./dist/browser/common/*.js"
     },
     "./node/common/*": {
       "import": "./dist/node/common/*.js",
-      "types": "./dist/common/*.d.ts",
       "require": "./dist/node/common/*.js"
     },
     "./browser/helpers/*": {
-      "import": "./dist/browser/helpers/*.js",
-      "types": "./dist/helpers/*.d.ts"
+      "import": "./dist/browser/helpers/*.js"
     },
     "./node/helpers/*": {
       "import": "./dist/node/helpers/*.js",
-      "types": "./dist/helpers/*.d.ts",
       "require": "./dist/node/helpers/*.js"
     },
     "./browser/*": {
-      "import": "./dist/browser/*/index.js",
-      "types": "./dist/*/index.d.ts"
+      "import": "./dist/browser/*/index.js"
     },
     "./node/*": {
       "import": "./dist/node/*/index.js",
-      "types": "./dist/*/index.d.ts",
       "require": "./dist/node/*/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "browser/common/*": ["dist/common/*"],
+      "node/common/*": ["dist/common/*"],
+      "browser/helpers/*": ["dist/helpers/*"],
+      "node/helpers/*": ["dist/helpers/*"],
+      "browser/*": ["dist/*/index.d.ts"],
+      "node/*": ["dist/*/index.d.ts"]
     }
   },
   "scripts": {

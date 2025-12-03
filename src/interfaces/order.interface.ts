@@ -26,7 +26,7 @@ export interface IOrderData extends IOrderDataInMsg {
 export type OrderSideShort = "B" | "S";
 export type OrderTypeShort = "L" | "I" | "P" | "M";
 
-export interface ICreateOrderData extends IOrderData {
+export interface ICreateSpotOrderData extends IOrderData {
   baseChain: string;
   baseCurrency: string;
   baseDecimal: number;

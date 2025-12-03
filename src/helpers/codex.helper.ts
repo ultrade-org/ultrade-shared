@@ -7,7 +7,7 @@ import { makeDummyTxn, makeGroupTxnsWithDummy } from './codex/txn.helper';
 import {
   concatArrays, encodeBase64, decodeString, encodeUint64, encodeString
 } from './Encoding';
-import { ICancelOrderMsgData, ICreateOrderData, IOrderData, OrderSideShort, OrderTypeShort } from '../interfaces/order.interface';
+import { ICancelOrderMsgData, ICreateSpotOrderData, IOrderData, OrderSideShort, OrderTypeShort } from '../interfaces/order.interface';
 import { AddressChain, PairToken, PairTokenInfo} from "../interfaces/pair.interface";
 import { MatchArgs, ICollectionWallet, MatchShareWallet } from "../interfaces/trading.interface";
 import { ITradingKeyData, ITradingKeyMessageData } from "../interfaces/tradingKey.interface";
@@ -661,7 +661,7 @@ const makeSuperCollectionWalletMsg = ({
   return makeAddressChainMsg(loginAddress, loginChainId);
 }
 
-export const makeCreateOrderMsg = (data: ICreateOrderData): Uint8Array => {
+export const makeCreateOrderMsg = (data: ICreateSpotOrderData): Uint8Array => {
   const orderBytes = Buffer.concat([
     encode(data.version, '2B'),
     encode(data.expiredTime, '4B'),
@@ -690,7 +690,7 @@ export const makeCreateOrderMsg = (data: ICreateOrderData): Uint8Array => {
   return messageBytes;
 }
 
-const getOrderDataJsonBytes = (data: ICreateOrderData): Uint8Array => {
+const getOrderDataJsonBytes = (data: ICreateSpotOrderData): Uint8Array => {
   const {
     amount, price,
     baseTokenAddress, baseChain, baseCurrency, baseDecimal,
