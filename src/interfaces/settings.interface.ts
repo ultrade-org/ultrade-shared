@@ -1,0 +1,25 @@
+export interface Theme {
+  "main-background": string;
+  "module-background": string;
+  "module-border": string;
+  "primary-text": string;
+  "secondary-text": string;
+  "buy-text": string;
+  "sell-text": string;
+  "buy-background": string;
+  "sell-background": string;
+  "active-element-default": string;
+  "hover-element-default": string;
+  "input-background-default": string;
+  "input-background-hover": string;
+  "input-background-disabled": string;
+  "input-border-default": string;
+  "input-border-active": string;
+  "button-disabled": string;
+  "button-border": string;
+  "primary-1": string;
+  "primary-2": string;
+  "pair-active-row": string;
+  "dropdown-shadow": string;
+  "button-text": string;
+};

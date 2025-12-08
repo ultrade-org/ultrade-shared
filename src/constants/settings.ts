@@ -13,3 +13,6 @@ export const PointSystemSettingsIds = [
   SettingIds.POINT_SYSTEM_TWITTER_JOB_ENABLED,
   SettingIds.POINT_SYSTEM_GUIDE_LINK,
 ];
+
+export const BOOLEAN_SETTINGS = ['obdex', 'kycTradeRequirementEnabled', 'newTab', 'reportButtons'];
+export const JSON_ARRAY_SETTINGS = ['geoblock', 'pinnedPairs', 'customMenuItems', 'chartInt'];

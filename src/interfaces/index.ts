@@ -19,3 +19,4 @@ export * from "./emailService.interface";
 export * from "./kmsService.interface";
 export * from "./services";
 export * from "./pagination.interface"
+export * from './settings.interface';
