@@ -662,32 +662,36 @@ const makeSuperCollectionWalletMsg = ({
 }
 
 export const makeCreateOrderMsg = (data: ICreateSpotOrderData): Uint8Array => {
-  const orderBytes = Buffer.concat([
-    encode(data.version, '2B'),
-    encode(data.expiredTime, '4B'),
-    encode(data.orderSide, 'str'),
-    encode(data.price, '32B'),
-    encode(data.amount, '32B'),
-    encode(data.orderType, 'str'),
-    encode(data.address, 'address', data.chainId),
-    encode(data.chainId, '2B'),
-    encode(data.baseTokenAddress, 'token', data.baseTokenChainId),
-    encode(data.baseTokenChainId, '4B'),
-    encode(data.priceTokenAddress, 'token', data.priceTokenChainId),
-    encode(data.priceTokenChainId, '4B'),
-    encode(data.companyId, '2B'),
-    encode(data.random, '8B'),
-    encode(data.decimalPrice, 'float'),
-    Buffer.alloc(50), // extra 50 zero bytes
-  ]);
-  const bs64OrderBytes = new Uint8Array(Buffer.from(encodeBase64(orderBytes)));
-  const messageBytes = new Uint8Array([
-    ...getOrderDataJsonBytes(data),
-    ...bs64OrderBytes,
-  ]);
-  console.log(`Order data should be ${ORDER_DATA_BYTES_LENGTH} bytes`, bs64OrderBytes.length, bs64OrderBytes);
-
-  return messageBytes;
+  try {
+    const orderBytes = Buffer.concat([
+      Buffer.from(encode(data.version, '2B')),
+      Buffer.from(encode(data.expiredTime, '4B')),
+      Buffer.from(encode(data.orderSide, 'str')),
+      Buffer.from(encode(data.price, '32B')),
+      Buffer.from(encode(data.amount, '32B')),
+      Buffer.from(encode(data.orderType, 'str')),
+      Buffer.from(encode(data.address, 'address', data.chainId)),
+      Buffer.from(encode(data.chainId, '2B')),
+      Buffer.from(encode(data.baseTokenAddress, 'token', data.baseTokenChainId)),
+      Buffer.from(encode(data.baseTokenChainId, '4B')),
+      Buffer.from(encode(data.priceTokenAddress, 'token', data.priceTokenChainId)),
+      Buffer.from(encode(data.priceTokenChainId, '4B')),
+      Buffer.from(encode(data.companyId, '2B')),
+      Buffer.from(encode(data.random, '8B')),
+      Buffer.from(encode(data.decimalPrice, 'float')),
+      Buffer.alloc(50), // extra 50 zero bytes
+    ]);
+    const bs64OrderBytes = new Uint8Array(Buffer.from(encodeBase64(orderBytes)));
+    const messageBytes = new Uint8Array([
+      ...getOrderDataJsonBytes(data),
+      ...bs64OrderBytes,
+    ]);
+    console.log(`Order data should be ${ORDER_DATA_BYTES_LENGTH} bytes`, bs64OrderBytes.length, bs64OrderBytes);
+  
+    return messageBytes;
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 const getOrderDataJsonBytes = (data: ICreateSpotOrderData): Uint8Array => {

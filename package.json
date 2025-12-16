@@ -1,6 +1,6 @@
 {
   "name": "@ultrade/shared",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "This package contains shared code for the projects.",
   "exports": {
     "./browser/common/*": {
