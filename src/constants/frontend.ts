@@ -1,0 +1,35 @@
+export const API_HOST = process.env.REACT_APP_API_URL;
+export const SOCKET_URL = process.env.REACT_APP_SOCKET_URL;
+export const ALGO_SERVER = process.env.REACT_APP_ALGO_SERVER;
+export const ALGO_SERVER_PORT = process.env.REACT_APP_ALGO_SERVER_PORT || "";
+export const ALGOD_TOKEN = process.env.REACT_APP_ALGOD_TOKEN || "";
+export const DISPENSER_LINK = process.env.REACT_APP_DISPENSER_LINK;
+export const FRONTEND_LINK = process.env.REACT_APP_FRONTEND_LINK || "";
+export const ALGO_EXPLORER_LINK = process.env.REACT_APP_ALGO_EXPLORER_LINK;
+export const ALGO_EXPLORER_ASSETS_URL = process.env.REACT_APP_ALGO_EXPLORER_ASSETS_URL;
+export const REACT_APP_REQUIRE_ACCESS_CODE = (process.env.REACT_APP_REQUIRE_ACCESS_CODE || "").toLowerCase() === "true";
+export const USERBACK_ACCESS_TOKEN = process.env.REACT_APP_USERBACK_ACCESS_TOKEN;
+export const EXT_ORDER_TYPES = (process.env.REACT_APP_EXT_ORDER_TYPES || "").toLowerCase() === "true";
+export const GLOWL_DECIMAL = 4;
+export const ORDER_BOOK_SIZE = 100;
+export const ORDER_BOOK_BUFFER = 50;
+export const MARKET_TRADES_SIZE = 50;
+export const WITHDRAW_FEE = 0.001 * 10 ** 6;
+export const APP_CLOSEOUT_FEE = 0.002 * 10 ** 6;
+export const EXCHANGE_NAME = "Ultrade";
+export const THEMES = ['theme1', 'theme2', 'theme3'];
+export const MASTER_APP_ID = process.env.REACT_APP_MASTER_APP_ID || "406";
+export const AGG_APP_ID = process.env.REACT_APP_AGG_APP_ID || "408";
+export const CODEX_APP_ID = Number(process.env.REACT_APP_CODEX_APP_ID || "467960617");
+console.log('CODEX_APP_ID', CODEX_APP_ID)
+export const PLATFORM_FEE = 3000; // 0.003 * 10 ** 6
+export const ALGO_NETWORK = process.env.REACT_APP_ALGO_NETWORK || "";
+export const DEFAULT_AGG_FEE = 0.3;
+export const ULTRADE_ID = 1;
+export const IS_DEV = FRONTEND_LINK === "https://dev.ultradedev.net";
+export const ZERO_TIMER = "00:00";
+//TO_DO_REMOVE
+export const GASLIMIT = 1000000;
+export const NETWORK = ALGO_NETWORK.toLowerCase() === "mainnet" ? "mainnet" : "testnet";
+export const sanitizeRegex = /[^\p{L}\p{N} .,!?:@$%()_-]/gui;
+export const PeraChainId = NETWORK === 'mainnet' ? 416001 : 416002;

@@ -4,3 +4,4 @@ export * from './cctp';
 export * from './response';
 export * from './settings';
 export * from './withdrawalWalletsMessage';
+export * from './frontend';
