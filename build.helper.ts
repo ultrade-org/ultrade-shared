@@ -19,12 +19,14 @@ if (!modeEnv) {
 export const production = modeEnv === 'production';
 export const distDir = path.resolve(__dirname, 'dist');
 export const srcDir = path.resolve(__dirname, 'src');
-const tsconfig = path.resolve(__dirname, 'tsconfig.alias.json');
+
+const tsconfig = path.resolve(__dirname, 'tsconfig.json');
 
 const externalDepsForBrowser: string[] = [
   '@certusone/wormhole-sd',
   '@certusone/wormhole-sd/*',
   '@injectivelabs/*',
+  '@ultrade/shared',
   'algosdk',
   '@solana/web3.js',
   'ethereumjs-util',
@@ -38,7 +40,7 @@ const pluginsForBrowser: esbuild.Plugin[] = [
   ...basePlugins({
     production,
     src: srcDir,
-    out: distDir,
+    out: path.resolve(distDir, 'src'),
     tsconfig
   }),
   ...basePluginsForBrowser
@@ -60,7 +62,7 @@ const pluginsForNode: esbuild.Plugin[] = [
   ...basePlugins({
     production,
     src: srcDir,
-    out: distDir,
+    out: path.resolve(distDir, 'src'),
     tsconfig
   }),
   nodeExternalsPlugin({

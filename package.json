@@ -2,49 +2,10 @@
   "name": "@ultrade/shared",
   "version": "1.0.20",
   "description": "This package contains shared code for the projects.",
-  "exports": {
-    "./browser/common/*": {
-      "import": "./dist/browser/common/*.js"
-    },
-    "./node/common/*": {
-      "import": "./dist/node/common/*.js",
-      "require": "./dist/node/common/*.js"
-    },
-    "./browser/helpers/*": {
-      "import": "./dist/browser/helpers/*.js"
-    },
-    "./node/helpers/*": {
-      "import": "./dist/node/helpers/*.js",
-      "require": "./dist/node/helpers/*.js"
-    },
-    "./browser/*": {
-      "import": "./dist/browser/*/index.js"
-    },
-    "./node/*": {
-      "import": "./dist/node/*/index.js",
-      "require": "./dist/node/*/index.js"
-    }
-  },
   "typesVersions": {
     "*": {
-      "browser/common/*": [
-        "dist/common/*"
-      ],
-      "node/common/*": [
-        "dist/common/*"
-      ],
-      "browser/helpers/*": [
-        "dist/helpers/*"
-      ],
-      "node/helpers/*": [
-        "dist/helpers/*"
-      ],
-      "browser/*": [
-        "dist/*/index.d.ts"
-      ],
-      "node/*": [
-        "dist/*/index.d.ts"
-      ]
+      "node/*": ["dist/src/*", "dist/src/*/index.d.ts"],
+      "browser/*": ["dist/src/*", "dist/src/*/index.d.ts"]
     }
   },
   "scripts": {
