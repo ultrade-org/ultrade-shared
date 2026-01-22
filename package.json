@@ -9,10 +9,10 @@
     }
   },
   "scripts": {
-    "build": "cross-env MODE=production ts-node esbuild.config.ts",
-    "dev": "cross-env MODE=development ts-node esbuild.config.ts",
-    "dev:node": "cross-env MODE=node-dev ts-node esbuild.config.ts",
-    "dev:browser": "cross-env MODE=browser-dev ts-node esbuild.config.ts",
+    "build": "npx cross-env MODE=production ts-node esbuild.config.ts",
+    "dev": "npx cross-env MODE=development ts-node esbuild.config.ts",
+    "dev:node": "npx cross-env MODE=node-dev ts-node esbuild.config.ts",
+    "dev:browser": "npx cross-env MODE=browser-dev ts-node esbuild.config.ts",
     "version:update": "npm version patch --no-git-tag-version"
   },
   "files": [
