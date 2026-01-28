@@ -168,7 +168,7 @@ export interface IPairInfo extends IPair {
 }
 
 export interface ICompanyPair extends Omit<IPair, 'scheduled_delistings' | 'pairSettings'> {
-  pairSettings: { [ name: string ]: string | object };
+  pairSettings: { [name: string]: string | object };
   delisting_date?: Date;
   new_orders_disabled?: boolean;
 }
@@ -227,7 +227,7 @@ export interface IUserTradeEvent {
   feeTokenDecimal?: number,
 }
 
-export type UserTradeEvent =  [
+export type UserTradeEvent = [
   number, // pairId
   string, // pairKey
   string, // userId

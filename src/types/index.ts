@@ -1,4 +1,5 @@
 export * from './algo-order.type';
+export * from './balance-result.types';
 export * from './codex.types';
 export * from './settings.type';
 export * from './amm/amm';

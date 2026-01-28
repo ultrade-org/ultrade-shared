@@ -178,4 +178,14 @@ interface IRematchOrderOperation {
   orderData: IOpenOrderDto,
 }
 
-export type IOrderOperation = ICancelOrderOperation | IAddOrderOperation | IRematchOrderOperation;
+export interface IReplaceOrderDto {
+  oldOrder: ICancelOrderDto;
+  newOrder: IOpenOrderDto;
+}
+
+interface IReplaceOrderOperation {
+  operation: "replace",
+  orderData: IReplaceOrderDto,
+}
+
+export type IOrderOperation = ICancelOrderOperation | IAddOrderOperation | IRematchOrderOperation | IReplaceOrderOperation;

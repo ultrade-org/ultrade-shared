@@ -7,3 +7,5 @@ export const twitterActionToPermissionMap: Record<TwitterAction, keyof ITwitterA
   [ActionEnum.TWITTER_REPLY]: 'canCreateTweets',
   [ActionEnum.TWITTER_RETWEET]: 'canCreateTweets',
 };
+
+export const POINTS_MAX_VALUE = 99_999_999;

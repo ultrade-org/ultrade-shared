@@ -184,6 +184,20 @@ export function decodeBase64(value: string): Uint8Array {
     return Buffer.from(value, 'base64')
 }
 
+export const hexToUint8Array = (hexString: string): Uint8Array => {
+  const cleanHex = hexString.startsWith('0x') ? hexString.slice(2) : hexString;
+
+  if (cleanHex.length % 2 !== 0) {
+    throw new Error("Invalid hex string");
+  }
+
+  const array = new Uint8Array(cleanHex.length / 2);
+  for (let i = 0; i < cleanHex.length; i += 2) {
+    array[i / 2] = parseInt(cleanHex.substring(i, i + 2), 16);
+  }
+  return array;
+};
+
 // export const sha256HashLength = 32
 
 // export function sha256Hash(arr: sha512.Message): Uint8Array {

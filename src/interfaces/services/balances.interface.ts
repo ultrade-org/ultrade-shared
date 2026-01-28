@@ -7,7 +7,7 @@ export type IBalanceInfo = {
   locked?: string;
   action?: BalanceActionType;
   actionId?: number;
-  operation?: 'update';
+  operationId?: string;
   ts?: number;
-}
+};
 
