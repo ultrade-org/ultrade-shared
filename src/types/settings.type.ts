@@ -24,6 +24,7 @@ export enum SettingIds {
   APPEARANCE_CHART_INT = 'appearance.chartInt',
   PINNED_PAIRS = 'markets.pinnedPairs',
   KYC_TRADE_REQUIREMENT_ENABLED = 'markets.kycTradeRequirementEnabled',
+  FORCE_SETTING_FLAG = 'company.forceSetting',
   AFFILIATE_DASHBOARD_VISIBILITY = 'product.affiliateDashboardVisibility',
   AFFILIATE_DASHBOARD_THRESHOLD = 'product.affiliateDashboardThreshold',
   AFFILIATE_DEFAULT_FEE_SHARE = 'product.affiliateDefaultFeeShare',
