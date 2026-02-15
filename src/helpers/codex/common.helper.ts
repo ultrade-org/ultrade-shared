@@ -144,18 +144,27 @@ export const encodeAddress = (
   return ethHelper.decodeAndNormalizeAddress(address);
 }
 
-export const unified_CCTP_token = 'CCTPUSDC';
-export const unified_CCTP_ChainID = 65537;
-
-export function getUnifiedUSDC(): Buffer {
-  const unified_buf = Buffer.alloc(32, 0);
-  Buffer.from(unified_CCTP_token, 'utf-8').copy(unified_buf);
-  return unified_buf;
+export const getChainId = (address: string) => {
+  if (algosdk.isValidAddress(address)) return Chains.Algorand;
+  if (address.startsWith('0x')) return Chains.Polygon;
+  return Chains.Solana;
 }
 
-export function getUnifiedUSDCToken(): AddressChain {
-  return {
-    address: "0x" + getUnifiedUSDC().toString('hex'),
-    chainId: unified_CCTP_ChainID
-  };
+export const detectChainByAddress = (address: string) => {
+  const cleanAddress = address.trim();
+  
+  if (cleanAddress.startsWith('0x') && cleanAddress.length === 42) {
+    return Chains.Polygon;
+  }
+  
+  if (cleanAddress.length === 58 && /^[A-Z2-7]+$/.test(cleanAddress)) {
+    return Chains.Algorand;
+  }
+  
+  if (cleanAddress.length >= 32 && cleanAddress.length <= 44 && 
+      /^[1-9A-HJ-NP-Za-km-z]+$/.test(cleanAddress)) {
+    return Chains.Solana;
+  }
+  
+  return 0;
 }

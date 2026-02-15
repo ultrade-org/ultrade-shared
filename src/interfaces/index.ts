@@ -20,3 +20,5 @@ export * from "./kmsService.interface";
 export * from "./services";
 export * from "./pagination.interface"
 export * from './settings.interface';
+export * from './socket.interface';
+export * from './algostreamer';

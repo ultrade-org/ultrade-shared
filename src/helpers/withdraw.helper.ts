@@ -120,7 +120,7 @@ export const createWithdrawalWalletMsg = (data: WithdrawalWalletData | UpdateWit
     encode(data.description || '', 'str'),
   ];
   
-  const withdrawalWalletBytes = Buffer.concat(withdrawalWallet);
+  const withdrawalWalletBytes = concatArrays(withdrawalWallet);
 
   const prettyData = messageForSigning(data.address);
 

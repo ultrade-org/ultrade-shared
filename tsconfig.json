@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "composite": true,
     "target": "ES2020",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -9,42 +10,44 @@
     "declarationDir": "./dist",
     "emitDeclarationOnly": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
-    "rootDir": ".",
+    "baseUrl": "./src",
+    "rootDir": "./src",
     "outDir": "./dist",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
       "@common/*": [
-        "./src/common/*"
+        "./common/*"
       ],
       "@constants": [
-        "./src/constants/index.ts"
+        "./constants/index.ts"
       ],
       "@enums": [
-        "./src/enums/index.ts"
+        "./enums/index.ts"
       ],
       "@helpers/*": [
-        "./src/helpers/*"
+        "./helpers/*"
+      ],
+      "@helpers/codex/*": [
+        "./helpers/codex/*"
       ],
       "@interfaces": [
-        "./src/interfaces/index.ts"
+        "./interfaces/index.ts"
       ],
       "@types": [
-        "./src/types/index.ts"
+        "./types/index.ts"
       ]
     },
     "types": [
       "node"
-    ]
+    ],
+    "declarationMap": false
   },
   "exclude": [
     "node_modules",
     "dist"
   ],
   "include": [
-    "src/**/*",
-    "build.helper.ts",
-    "esbuild.config.ts"
+    "src/**/*"
   ]
 }

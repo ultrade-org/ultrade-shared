@@ -6,10 +6,6 @@ import { baseBrowserBuildConfig, baseNodeBuildConfig, basePlugins, basePluginsFo
 
 type Mode = 'production' | 'node-dev' | 'browser-dev' | 'development';
 
-export interface IEntryPoint {
-  in: string;
-  out: string;
-}
 export const modeEnv: Mode = process.env.MODE as Mode;
 
 if (!modeEnv) {
@@ -20,40 +16,26 @@ export const production = modeEnv === 'production';
 export const distDir = path.resolve(__dirname, 'dist');
 export const srcDir = path.resolve(__dirname, 'src');
 
-const tsconfig = path.resolve(__dirname, 'tsconfig.json');
+const tsconfig = path.resolve(__dirname, production ? 'tsconfig.json' : 'tsconfig.dev.json');
 
-const externalDepsForBrowser: string[] = [
-  '@certusone/wormhole-sd',
-  '@certusone/wormhole-sd/*',
-  '@injectivelabs/*',
-  '@ultrade/shared',
-  'algosdk',
-  '@solana/web3.js',
-  'ethereumjs-util',
-  'bs58',
-  'buffer',
-  'crypto-js',
-  'bignumber.js',
-];
 
 const pluginsForBrowser: esbuild.Plugin[] = [
   ...basePlugins({
     production,
     src: srcDir,
-    out: path.resolve(distDir, 'src'),
+    out: distDir,
     tsconfig
   }),
   ...basePluginsForBrowser
 ];
 
 
-const buildOptionsForBrowser = (composedEntries: IEntryPoint[]): esbuild.BuildOptions => ({
+const buildOptionsForBrowser = (composedEntries: string[]): esbuild.BuildOptions => ({
   ...baseBrowserBuildConfig,
   entryPoints: composedEntries,
   sourcemap: !production,
   minify: production,
   outdir: path.resolve(distDir, 'browser'),
-  external: externalDepsForBrowser,
   plugins: pluginsForBrowser,
 });
 
@@ -62,7 +44,7 @@ const pluginsForNode: esbuild.Plugin[] = [
   ...basePlugins({
     production,
     src: srcDir,
-    out: path.resolve(distDir, 'src'),
+    out: distDir,
     tsconfig
   }),
   nodeExternalsPlugin({
@@ -70,7 +52,7 @@ const pluginsForNode: esbuild.Plugin[] = [
   })
 ];
 
-const buildOptionsForNode = (composedEntries: IEntryPoint[]): esbuild.BuildOptions => ({
+const buildOptionsForNode = (composedEntries: string[]): esbuild.BuildOptions => ({
   ...baseNodeBuildConfig,
   entryPoints: composedEntries,
   sourcemap: !production,
@@ -79,7 +61,7 @@ const buildOptionsForNode = (composedEntries: IEntryPoint[]): esbuild.BuildOptio
   plugins: pluginsForNode,
 })
 
-type Handlers = Record<Mode, (composedEntries: IEntryPoint[]) => Promise<void>>;
+type Handlers = Record<Mode, (composedEntries: string[]) => Promise<void>>;
 
 export const handlers: Handlers = {
   production: async (composedEntries) => {
@@ -91,12 +73,12 @@ export const handlers: Handlers = {
   },
   'node-dev': async (composedEntries) => {
     const ctx = await esbuild.context(buildOptionsForNode(composedEntries));
-    await ctx.watch();
+    await ctx.watch({ delay: 70 });
     console.log('👀 Watching Node build...');
   },
   'browser-dev': async (composedEntries) => {
     const ctx = await esbuild.context(buildOptionsForBrowser(composedEntries));
-    await ctx.watch();
+    await ctx.watch({ delay: 70 });
     console.log('👀 Watching Browser build...');
   },
   development: async (composedEntries) => {

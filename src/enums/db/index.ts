@@ -19,6 +19,7 @@ export * from './setting-type.enum';
 export * from './state-type.enum';
 export * from './upgrade.enum';
 export * from './withdrawal-wallet.enum';
+export * from './pending-actions.enum';
 
 export {
   AvailablePairSettings,

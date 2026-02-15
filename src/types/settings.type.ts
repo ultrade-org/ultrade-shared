@@ -152,12 +152,12 @@ export interface ICHART_VARS {
 }
 
 export interface ThemeObj {
-  logo: string,
-  name: string,
-  active: boolean,
-  value: Theme,
-  chartValue: ICHART_VARS
-};
+  name: string;
+  id: themeId;
+  active: boolean;
+  colors: string;
+  chartColors: string;
+}
 
 export interface DbThemes {
   theme1: {

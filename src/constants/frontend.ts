@@ -21,7 +21,6 @@ export const THEMES = ['theme1', 'theme2', 'theme3'];
 export const MASTER_APP_ID = process.env.REACT_APP_MASTER_APP_ID || "406";
 export const AGG_APP_ID = process.env.REACT_APP_AGG_APP_ID || "408";
 export const CODEX_APP_ID = Number(process.env.REACT_APP_CODEX_APP_ID || "467960617");
-console.log('CODEX_APP_ID', CODEX_APP_ID)
 export const PLATFORM_FEE = 3000; // 0.003 * 10 ** 6
 export const ALGO_NETWORK = process.env.REACT_APP_ALGO_NETWORK || "";
 export const DEFAULT_AGG_FEE = 0.3;

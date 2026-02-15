@@ -4,4 +4,6 @@ export * from "./notification.enum";
 export * from "./social.enum";
 export * from "./db";
 export * from "./rabbitMq";
+export * from "./points.enum";
 export * from './settings.enum';
+export * from './socket.enum';

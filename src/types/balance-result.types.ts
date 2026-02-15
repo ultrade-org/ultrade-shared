@@ -16,7 +16,7 @@ export type BalanceWithEntityResult =
   | { status: 'not_found' }
   | { status: 'insufficient' };
 
-  export type DetailedBalanceOperationResult =
+export type DetailedBalanceOperationResult =
   | { status: 'ok'; total: string; locked: string }
   | { status: 'not_found' }
   | { status: 'insufficient_available' }
@@ -24,7 +24,6 @@ export type BalanceWithEntityResult =
   | { status: 'insufficient_total' }
   | { status: 'insufficient' }
   | { status: 'error'; message: string };
-
 
 export type ResyncBalanceResult =
   | { status: 'ok'; total: string; locked: string; oldTotal: string }
@@ -43,9 +42,9 @@ export type InitBalanceResult =
   | { status: 'ok' }
   | { status: 'error'; message?: string };
 
-  export type IncreaseBalanceResult =
-    | { status: 'ok'; total: string; locked: string }
-    | ErrorResult;
+export type IncreaseBalanceResult =
+  | { status: 'ok'; total: string; locked: string }
+  | ErrorResult;
 
 export type DecreaseBalanceResult =
   | { status: 'ok'; total: string; locked: string; previousTotal: string; previousLocked: string }

@@ -7,6 +7,7 @@ export enum OperationStatusEnum {
 
 export enum ActionTypeEnum {
   Deposit = 'deposit',
+  FastDeposit = 'fast_deposit',
   Withdraw = 'withdraw',
   Rebalance = 'rebalance',
 }

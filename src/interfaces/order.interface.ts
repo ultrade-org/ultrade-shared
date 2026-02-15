@@ -153,6 +153,7 @@ export interface ProcessOrder {
   companyId: number,
   expiryAt: Date,
   message: string,
+  messageHash: string,
   signature: string,
   tradingKey?: string,
 }

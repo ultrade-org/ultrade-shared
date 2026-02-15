@@ -9,6 +9,7 @@ interface ICodexBalanceLog {
 export interface ICodexDepositLog extends ICodexBalanceLog {
   sender: string,
   senderChainID: string,
+  fee?: string,
 }
 
 export interface ICodexWithdrawal extends ICodexBalanceLog {
@@ -45,7 +46,7 @@ export interface StreamerVaa {
   tokenAddr: string;
   tokenChainID: string;
   sequence: string;
-  vaaType: 'withdraw' | 'deposit';
+  vaaType: 'withdraw' | 'deposit' | 'fast_deposit';
   txnId: string;
   fee: string;
   msgHash?: string;
