@@ -1,6 +1,6 @@
 {
   "name": "@ultrade/shared",
-  "version": "1.0.21",
+  "version": "1.0.20",
   "description": "This package contains shared code for the projects.",
   "typesVersions": {
     "*": {
