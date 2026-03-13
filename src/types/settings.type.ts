@@ -152,6 +152,14 @@ export interface ICHART_VARS {
 }
 
 export interface ThemeObj {
+  logo: string,
+  name: string,
+  active: boolean,
+  value: Theme,
+  chartValue: ICHART_VARS
+}
+
+export interface DbThemeObj {
   name: string;
   id: themeId;
   active: boolean;
