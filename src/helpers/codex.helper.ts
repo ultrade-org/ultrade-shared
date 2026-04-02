@@ -1398,3 +1398,12 @@ export const getUpgradeImpMsg = (chainId: number, implementationAddress: string)
     encode(0, '8B'),
   ]);
 }
+
+export const getSetCCTPContractsMsg = (chainId: number, tokenMessengerAddress: string, messageTransmitterAddress: string) => {
+  return concatArrays([
+    encode('set_cctp', "str"),
+    encode(chainId, '8B'),
+    encodeAddress(tokenMessengerAddress, chainId),
+    encodeAddress(messageTransmitterAddress, chainId),
+  ]);
+}

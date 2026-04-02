@@ -16,3 +16,4 @@ export const PointSystemSettingsIds = [
 
 export const BOOLEAN_SETTINGS = ['obdex', 'kycTradeRequirementEnabled', 'newTab', 'reportButtons'];
 export const JSON_ARRAY_SETTINGS = ['geoblock', 'pinnedPairs', 'customMenuItems', 'chartInt'];
+export const MIN_CUSTOM_FEE_INCREMENT = 0.001;

@@ -7,8 +7,11 @@ export enum OperationStatusEnum {
 
 export enum ActionTypeEnum {
   Deposit = 'deposit',
+  FastDeposit = 'fast_deposit',
   Withdraw = 'withdraw',
   Rebalance = 'rebalance',
+  Upgrade = 'upgrade',
+  SetCCTP = 'set_cctp',
 }
 
 export enum CCTPStatus {
